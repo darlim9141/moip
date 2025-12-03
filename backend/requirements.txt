@@ -1,13 +1,11 @@
 fastapi
 uvicorn
 python-multipart
-tensorflow
+tensorflow-cpu
 scikit-learn
 pillow
 pillow-heif
 rembg
-numpy
-sqlalchemy
-onxruntime
 sqlalchemy
 google-generativeai
+onnxruntime
