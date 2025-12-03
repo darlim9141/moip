@@ -4,7 +4,7 @@ import * as React from "react";
 import { OTPInput, OTPInputContext } from "input-otp";
 import { MinusIcon } from "lucide-react";
 
-import { cn } from "./utils";
+import { cn } from "./utils"; 
 
 function InputOTP({
   className,
@@ -44,7 +44,9 @@ function InputOTPSlot({
   index: number;
 }) {
   const inputOTPContext = React.useContext(OTPInputContext);
-  const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {};
+  // [수정] context 타입 에러 방지를 위해 as any 추가
+  const { char, hasFakeCaret, isActive } =
+    (inputOTPContext as any)?.slots[index] ?? {};
 
   return (
     <div
