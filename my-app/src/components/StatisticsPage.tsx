@@ -25,26 +25,31 @@ export function StatisticsPage() {
   const [stats, setStats] = useState<StatData | null>(null);
   const [backgroundPoints, setBackgroundPoints] = useState<any[]>([]);
 
+  // API URL 변수
+  const API_URL = import.meta.env.VITE_API_URL;
+
   // 2. 데이터 가져오기 (API 호출)
   useEffect(() => {
     // (1) 통계 데이터 가져오기
-    fetch('import.meta.env.VITE_API_URL/api/stats')
+    // [수정 포인트] 백틱(`)과 ${} 사용
+    fetch(`${API_URL}/api/stats`)
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(err => console.error("Failed to load stats:", err));
 
     // (2) 3D 배경 데이터 가져오기
-    fetch('import.meta.env.VITE_API_URL/api/graph-data')
+    // [수정 포인트] 백틱(`)과 ${} 사용
+    fetch(`${API_URL}/api/graph-data`)
       .then(res => res.json())
       .then(data => setBackgroundPoints(data))
       .catch(err => console.error("Failed to load graph data:", err));
   }, []);
 
-  // 하드코딩된 데이터셋 정보 (변경 불필요)
+  // 하드코딩된 데이터셋 정보
   const datasetStats = [
-    { category: 'Training Images', value: '???', description: 'Curated fashion images for model training' },
-    { category: 'Validation Set', value: '???', description: 'Images used for model validation' },
-    { category: 'Test Set', value: '??', description: 'Final evaluation dataset' },
+    { category: 'Training Images', value: '400,000', description: 'Curated fashion images for model training' },
+    { category: 'Validation Set', value: '50,000', description: 'Images used for model validation' },
+    { category: 'Test Set', value: '50,000', description: 'Final evaluation dataset' },
     { category: 'Style Categories', value: '4', description: 'Minimal, Casual, Classic, Street' },
   ];
 

@@ -25,9 +25,13 @@ export function HomePage() {
   // [추가] 3D 배경 데이터 State
   const [backgroundPoints, setBackgroundPoints] = useState<any[]>([]);
 
+  // API URL 변수 (재사용을 위해)
+  const API_URL = import.meta.env.VITE_API_URL;
+
   // [추가] 페이지 로드 시 배경 데이터 가져오기
   useEffect(() => {
-    fetch('import.meta.env.VITE_API_URL/api/graph-data')
+    // [수정 포인트 1] 백틱(`)과 ${} 사용
+    fetch(`${API_URL}/api/graph-data`)
       .then(res => res.json())
       .then(data => {
         console.log("Graph data loaded:", data.length, "points");
@@ -50,7 +54,8 @@ export function HomePage() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('import.meta.env.VITE_API_URL/api/analyze', {
+      // [수정 포인트 2] 백틱(`)과 ${} 사용
+      const response = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         body: formData,
       });
