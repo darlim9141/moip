@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+tensorflow
+scikit-learn
+pillow
+pillow-heif
+rembg
+numpy
+sqlalchemy
+onxruntime
+sqlalchemy
+google-generativeai
