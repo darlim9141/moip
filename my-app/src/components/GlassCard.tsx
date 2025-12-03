@@ -1,5 +1,4 @@
-import { ReactNode } from 'react';
-import { motion } from 'motion/react';
+import type { ReactNode } from 'react';
 
 interface GlassCardProps {
   children: ReactNode;
