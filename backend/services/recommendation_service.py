@@ -8,7 +8,6 @@ import google.generativeai as genai
 from PIL import Image
 import io
 
-# GOOGLE_API_KEY = "AIzaSyBTKIz6s_gDgOxpGzWye6HLtjTrrO2wWPg"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 try:
@@ -92,119 +91,99 @@ def get_fallback_recommendations(style_name: str):
     
     # 스타일별 기본 데이터
     fallback_db = {
-        "minimal": [
-            {"id": "f1", "title": "Minimal Watch", "description": "Clean and simple design.", "brands": ["DW", "Nomos"], "image": "[https://image.pollinations.ai/prompt/minimalist%20watch](https://image.pollinations.ai/prompt/minimalist%20watch)"},
-            {"id": "f2", "title": "Leather Tote", "description": "Essential daily bag.", "brands": ["Cuyana"], "image": "[https://image.pollinations.ai/prompt/leather%20tote%20bag](https://image.pollinations.ai/prompt/leather%20tote%20bag)"},
-            {"id": "f3", "title": "White Sneakers", "description": "Goes with everything.", "brands": ["Common Projects"], "image": "[https://image.pollinations.ai/prompt/white%20sneakers](https://image.pollinations.ai/prompt/white%20sneakers)"}
+        "Minimal": [
+            {
+                "id": "m1",
+                "title": "Minimalist Watch",
+                "description": "Clean lines for a simple look",
+                "brands": ["Daniel Wellington", "Nordgreen"],
+                "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "m2",
+                "title": "Leather Tote",
+                "description": "Essential leather bag",
+                "brands": ["Cuyana", "Everlane"],
+                "image": "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "m3",
+                "title": "White Sneakers",
+                "description": "Versatile everyday sneakers",
+                "brands": ["Common Projects", "Veja"],
+                "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=60"
+            }
         ],
+        "Casual": [
+            {
+                "id": "c1",
+                "title": "Denim Jacket",
+                "description": "Classic layer for any season",
+                "brands": ["Levi's", "Gap"],
+                "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "c2",
+                "title": "Canvas Backpack",
+                "description": "Durable and stylish",
+                "brands": ["Herschel", "Fjallraven"],
+                "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "c3",
+                "title": "Comfort Hoodie",
+                "description": "Soft cotton blend hoodie",
+                "brands": ["Champion", "Nike"],
+                "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=500&q=60"
+            }
+        ],
+        "Street": [
+            {
+                "id": "s1",
+                "title": "Oversized Tee",
+                "description": "Graphic print statement piece",
+                "brands": ["Supreme", "Stussy"],
+                "image": "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "s2",
+                "title": "High-Top Sneakers",
+                "description": "Iconic street style footwear",
+                "brands": ["Jordan", "Vans"],
+                "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "s3",
+                "title": "Bucket Hat",
+                "description": "Trendy accessory",
+                "brands": ["Kangol", "Adidas"],
+                "image": "https://images.unsplash.com/photo-1575424909138-46b05e5919ec?auto=format&fit=crop&w=500&q=60"
+            }
+        ],
+        "Classic": [
+            {
+                "id": "cl1",
+                "title": "Trench Coat",
+                "description": "Timeless outerwear",
+                "brands": ["Burberry", "London Fog"],
+                "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "cl2",
+                "title": "Leather Loafers",
+                "description": "Elegant footwear choice",
+                "brands": ["Gucci", "Cole Haan"],
+                "image": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                "id": "cl3",
+                "title": "Silk Scarf",
+                "description": "Sophisticated accent",
+                "brands": ["Hermes", "Toteme"],
+                "image": "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?auto=format&fit=crop&w=500&q=60"
+            }
+        ]
     }
     
     key = style_name.lower()
     return fallback_db.get(key, fallback_db["minimal"])
-
-# 스타일별 추천 상품 데이터 
-# PRODUCT_DB = {
-#     "Minimal": [
-#         {
-#             "id": "m1",
-#             "title": "Minimalist Watch",
-#             "description": "Clean lines for a simple look",
-#             "brands": ["Daniel Wellington", "Nordgreen"],
-#             "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=500&q=60"
-#         },
-#         {
-#             "id": "m2",
-#             "title": "Leather Tote",
-#             "description": "Essential leather bag",
-#             "brands": ["Cuyana", "Everlane"],
-#             "image": "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=500&q=60"
-#         },
-#         {
-#             "id": "m3",
-#             "title": "White Sneakers",
-#             "description": "Versatile everyday sneakers",
-#             "brands": ["Common Projects", "Veja"],
-#             "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=60"
-#         }
-#     ],
-#     "Casual": [
-#         {
-#             "id": "c1",
-#             "title": "Denim Jacket",
-#             "description": "Classic layer for any season",
-#             "brands": ["Levi's", "Gap"],
-#             "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=500&q=60"
-#         },
-#         {
-#             "id": "c2",
-#             "title": "Canvas Backpack",
-#             "description": "Durable and stylish",
-#             "brands": ["Herschel", "Fjallraven"],
-#             "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=60"
-#         },
-#          {
-#             "id": "c3",
-#             "title": "Comfort Hoodie",
-#             "description": "Soft cotton blend hoodie",
-#             "brands": ["Champion", "Nike"],
-#             "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=500&q=60"
-#         }
-#     ],
-#     "Street": [
-#         {
-#             "id": "s1",
-#             "title": "Oversized Tee",
-#             "description": "Graphic print statement piece",
-#             "brands": ["Supreme", "Stussy"],
-#             "image": "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=500&q=60"
-#         },
-#         {
-#             "id": "s2",
-#             "title": "High-Top Sneakers",
-#             "description": "Iconic street style footwear",
-#             "brands": ["Jordan", "Vans"],
-#             "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=60"
-#         },
-#          {
-#             "id": "s3",
-#             "title": "Bucket Hat",
-#             "description": "Trendy accessory",
-#             "brands": ["Kangol", "Adidas"],
-#             "image": "https://images.unsplash.com/photo-1575424909138-46b05e5919ec?auto=format&fit=crop&w=500&q=60"
-#         }
-#     ],
-#     "Classic": [
-#         {
-#             "id": "cl1",
-#             "title": "Trench Coat",
-#             "description": "Timeless outerwear",
-#             "brands": ["Burberry", "London Fog"],
-#             "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=60"
-#         },
-#         {
-#             "id": "cl2",
-#             "title": "Leather Loafers",
-#             "description": "Elegant footwear choice",
-#             "brands": ["Gucci", "Cole Haan"],
-#             "image": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=500&q=60"
-#         },
-#          {
-#             "id": "cl3",
-#             "title": "Silk Scarf",
-#             "description": "Sophisticated accent",
-#             "brands": ["Hermes", "Toteme"],
-#             "image": "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?auto=format&fit=crop&w=500&q=60"
-#         }
-#     ]
-# }
-
-# def get_recommendations_by_style(style_name: str):
-#     """
-#     스타일 이름(Minimal, Casual 등)을 받아서 해당 상품 리스트를 반환
-#     """
-#     # 대소문자 문제 방지를 위해 첫 글자만 대문자로 변환 (예: minimal -> Minimal)
-#     style_key = style_name.capitalize()
-    
-#     # 해당 스타일이 없으면 기본값으로 'Casual' 리턴
-#     return PRODUCT_DB.get(style_key, PRODUCT_DB["Casual"])
-
