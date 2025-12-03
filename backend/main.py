@@ -18,7 +18,7 @@ app = FastAPI(lifespan=lifespan)
 origins = [
     "http://localhost:5173",
     "https://moip-frontend.vercel.app", # (나중에 이런 식으로 Vercel 주소 추가)
-    "*" # [임시 추가] 배포 테스트를 위해 모든 접속 허용
+    "*" # 배포 테스트를 위해 모든 접속 허용
 ]
 
 app.add_middleware(

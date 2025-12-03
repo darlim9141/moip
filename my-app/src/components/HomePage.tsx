@@ -27,7 +27,7 @@ export function HomePage() {
 
   // [추가] 페이지 로드 시 배경 데이터 가져오기
   useEffect(() => {
-    fetch('http://localhost:8000/api/graph-data')
+    fetch('import.meta.env.VITE_API_URL/api/graph-data')
       .then(res => res.json())
       .then(data => {
         console.log("Graph data loaded:", data.length, "points");
@@ -50,7 +50,7 @@ export function HomePage() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('http://localhost:8000/api/analyze', {
+      const response = await fetch('import.meta.env.VITE_API_URL/api/analyze', {
         method: 'POST',
         body: formData,
       });

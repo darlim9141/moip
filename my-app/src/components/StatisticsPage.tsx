@@ -28,13 +28,13 @@ export function StatisticsPage() {
   // 2. 데이터 가져오기 (API 호출)
   useEffect(() => {
     // (1) 통계 데이터 가져오기
-    fetch('http://localhost:8000/api/stats')
+    fetch('import.meta.env.VITE_API_URL/api/stats')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(err => console.error("Failed to load stats:", err));
 
     // (2) 3D 배경 데이터 가져오기
-    fetch('http://localhost:8000/api/graph-data')
+    fetch('import.meta.env.VITE_API_URL/api/graph-data')
       .then(res => res.json())
       .then(data => setBackgroundPoints(data))
       .catch(err => console.error("Failed to load graph data:", err));

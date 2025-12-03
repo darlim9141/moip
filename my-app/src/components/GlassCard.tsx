@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { motion } from 'motion/react';
 
 interface GlassCardProps {
   children: ReactNode;
