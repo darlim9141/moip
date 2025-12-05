@@ -18,10 +18,9 @@ interface ArchiveImage {
 export function ArchivePage() {
   const [selectedImage, setSelectedImage] = useState<ArchiveImage | null>(null);
   
-  // [수정 1] 초기 날짜를 2025년 11월로 설정 (Month는 0부터 시작하므로 10 = 11월)
+  // 초기 날짜를 2025년 11월로 설정
   const [currentMonth, setCurrentMonth] = useState(new Date(2025, 10)); 
 
-  // [수정 2 & 3] 2025년 데이터로 업데이트 및 12월 데이터 추가, 이미지 URL 다양화
   const archiveImages: ArchiveImage[] = [
     // --- November 2025 Data ---
     {
@@ -60,7 +59,7 @@ export function ArchivePage() {
       image: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 90.7, casual: 0.3, classic: 3, street: 6 },
     },
-    // --- December 2025 Data (새로 추가됨) ---
+    // --- December 2025 Data ---
     {
       id: '7',
       date: '2025-12-02',
@@ -130,7 +129,6 @@ export function ArchivePage() {
       >
         <h1 className="text-white mb-4 text-4xl">Archive</h1>
         <p className="text-white/60 mb-2">Browse your fashion analysis history</p>
-        {/* [수정 4] 보안 관련 안내 문구 추가 */}
         <p className="text-white/30 text-sm max-w-2xl mx-auto">
           For security and privacy reasons, this archive is currently simulated and not connected to the live database.
         </p>
@@ -218,7 +216,7 @@ export function ArchivePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6"
             style={{ background: 'rgba(0, 0, 0, 0.8)', backdropFilter: 'blur(10px)' }}
             onClick={() => setSelectedImage(null)}
           >
@@ -227,9 +225,12 @@ export function ArchivePage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-4xl w-full"
+              // [핵심 변경 사항]
+              // 모바일: w-full (꽉 참), max-h-[85vh] (세로 스크롤), overflow-y-auto
+              // 데스크톱 (md 이상): md:max-w-4xl (원래 너비), md:max-h-none (스크롤 없음/내용물 크기만큼), md:overflow-visible
+              className="w-full max-h-[85vh] overflow-y-auto rounded-2xl md:max-w-4xl md:max-h-none md:overflow-visible"
             >
-              <GlassCard className="p-8">
+              <GlassCard className="p-6 md:p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <h2 className="text-white mb-1">Analysis Details</h2>
@@ -250,13 +251,14 @@ export function ArchivePage() {
                   </button>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                {/* 그리드 레이아웃: 모바일 1열, 데스크톱 2열 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Image */}
-                  <div className="rounded-xl overflow-hidden border border-white/10">
+                  <div className="rounded-xl overflow-hidden border border-white/10 h-full">
                     <img
                       src={selectedImage.image}
                       alt="Analysis result"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover aspect-[3/4]"
                     />
                   </div>
 

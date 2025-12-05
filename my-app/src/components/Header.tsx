@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Sparkles, BarChart3, Calendar, FileText, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react'; // 애니메이션을 위해 추가
+import { motion, AnimatePresence } from 'motion/react';
 
 type Page = 'home' | 'statistics' | 'archive' | 'documentation';
 
@@ -24,7 +24,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     setIsMobileMenuOpen(false); // 메뉴 클릭 시 모바일 메뉴 닫기
   };
 
-  // 재사용할 유리 질감 스타일
+  // 기존 디자인의 유리 질감 스타일을 변수로 추출 (재사용 위해)
   const glassStyle = {
     background: 'rgba(255, 255, 255, 0.05)',
     backdropFilter: 'blur(20px)',
@@ -36,13 +36,13 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
       <div className="max-w-7xl mx-auto">
         {/* 메인 헤더 바 */}
         <div 
-          className="rounded-2xl px-6 py-4 border border-white/10 relative z-50"
+          className="rounded-2xl px-6 py-4 border border-white/10 relative z-20"
           style={glassStyle}
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div 
-              className="flex items-center gap-3 cursor-pointer" 
+              className="flex items-center gap-3 cursor-pointer"
               onClick={() => handleNavigate('home')}
             >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
@@ -50,11 +50,11 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               </div>
               <div>
                 <h1 className="text-white tracking-tight font-bold">Moip</h1>
-                <p className="text-xs text-white/50">Fashion Recognition</p>
+                <p className="text-xs text-white/50">모입 · Fashion Recognition</p>
               </div>
             </div>
 
-            {/* Desktop Navigation (md 이상일 때만 보임) */}
+            {/* Desktop Navigation (md 이상일 때만 보임 - 기존 디자인 유지) */}
             <nav className="hidden md:flex items-center gap-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -70,6 +70,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                     }`}
                     style={{
                       background: isActive ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                      backdropFilter: isActive ? 'blur(10px)' : 'none',
                     }}
                   >
                     <Icon className="w-4 h-4" />
@@ -89,7 +90,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           </div>
         </div>
 
-        {/* Mobile Navigation Dropdown (애니메이션 적용) */}
+        {/* Mobile Navigation Dropdown (모바일에서만 나타나는 메뉴) */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -97,10 +98,10 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden mt-2 rounded-2xl border border-white/10 overflow-hidden"
+              className="md:hidden mt-2 rounded-2xl border border-white/10 overflow-hidden relative z-10"
               style={glassStyle}
             >
-              <div className="flex flex-col p-2">
+              <div className="flex flex-col p-2 gap-1">
                 {navItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = currentPage === item.id;
