@@ -1,12 +1,12 @@
 # 1. 파이썬 3.9 이미지 사용
-FROM python:3.9
+FROM python:3.10
 
 # 2. 작업 디렉토리 설정
 WORKDIR /code
 
 # 3. 필수 패키지 설치
 # (libGL은 opencv나 tensorflow 영상 처리 시 필요할 수 있음)
-RUN apt-get update && apt-get install -y libgl1-mesa-glx
+RUN apt-get update && apt-get install -y libgl1 libglib2.0-0
 
 # 4. requirements.txt 복사 및 설치
 COPY requirements.txt /code/requirements.txt

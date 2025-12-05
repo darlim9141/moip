@@ -23,7 +23,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, # 혹은 ["*"] 로 직접 설정
+    allow_origins=["*"], # 배포 초기에는 * 로 모든 접속 허용하는 것이 정신건강에 좋습니다.
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
