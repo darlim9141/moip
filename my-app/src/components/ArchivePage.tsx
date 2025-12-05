@@ -17,46 +17,68 @@ interface ArchiveImage {
 
 export function ArchivePage() {
   const [selectedImage, setSelectedImage] = useState<ArchiveImage | null>(null);
-  const [currentMonth, setCurrentMonth] = useState(new Date(2024, 10)); // November 2024
+  
+  // [수정 1] 초기 날짜를 2025년 11월로 설정 (Month는 0부터 시작하므로 10 = 11월)
+  const [currentMonth, setCurrentMonth] = useState(new Date(2025, 10)); 
 
-  // Mock archive data
+  // [수정 2 & 3] 2025년 데이터로 업데이트 및 12월 데이터 추가, 이미지 URL 다양화
   const archiveImages: ArchiveImage[] = [
+    // --- November 2025 Data ---
     {
       id: '1',
-      date: '2024-11-25',
+      date: '2025-11-25',
       image: 'https://images.unsplash.com/photo-1653875842174-429c1b467548?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcG9ydHJhaXQlMjBtaW5pbWFsfGVufDF8fHx8MTc2NDEyOTg5N3ww&ixlib=rb-4.1.0&q=80&w=1080',
       styles: { minimal: 80, casual: 30, classic: 24, street: 10 },
     },
     {
       id: '2',
-      date: '2024-11-22',
-      image: 'https://images.unsplash.com/photo-1708317031389-1afe5ccc6f96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXN1YWwlMjBvdXRmaXR8ZW58MXx8fHwxNzY0MTI5ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      date: '2025-11-22',
+      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 25, casual: 75, classic: 30, street: 40 },
     },
     {
       id: '3',
-      date: '2024-11-20',
-      image: 'https://images.unsplash.com/photo-1752950823536-2db75f37980d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGFzc2ljJTIwc3R5bGUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NjQxMjk4OTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      date: '2025-11-20',
+      image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 30, casual: 20, classic: 85, street: 15 },
     },
     {
       id: '4',
-      date: '2024-11-18',
+      date: '2025-11-18',
       image: 'https://images.unsplash.com/photo-1603233842167-ff91cab9e6ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmYXNoaW9uJTIwdXJiYW58ZW58MXx8fHwxNzY0MTIwMTc4fDA&ixlib=rb-4.1.0&q=80&w=1080',
       styles: { minimal: 15, casual: 45, classic: 20, street: 90 },
     },
     {
       id: '5',
-      date: '2024-11-15',
-      image: 'https://images.unsplash.com/photo-1653875842174-429c1b467548?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcG9ydHJhaXQlMjBtaW5pbWFsfGVufDF8fHx8MTc2NDEyOTg5N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      date: '2025-11-15',
+      image: 'https://images.unsplash.com/photo-1529139574466-a302c27e3844?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 70, casual: 35, classic: 28, street: 12 },
     },
     {
       id: '6',
-      date: '2024-11-12',
-      image: 'https://images.unsplash.com/photo-1708317031389-1afe5ccc6f96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXN1YWwlMjBvdXRmaXR8ZW58MXx8fHwxNzY0MTI5ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      date: '2025-11-12',
+      image: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 35, casual: 80, classic: 25, street: 50 },
     },
+    // --- December 2025 Data (새로 추가됨) ---
+    {
+      id: '7',
+      date: '2025-12-02',
+      image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      styles: { minimal: 20, casual: 40, classic: 10, street: 80 },
+    },
+    {
+      id: '8',
+      date: '2025-12-05',
+      image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      styles: { minimal: 60, casual: 20, classic: 50, street: 10 },
+    },
+    {
+      id: '9',
+      date: '2025-12-10',
+      image: 'https://images.unsplash.com/photo-1550614000-4b9519e02d48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      styles: { minimal: 10, casual: 90, classic: 10, street: 20 },
+    }
   ];
 
   // Generate calendar days
@@ -107,7 +129,11 @@ export function ArchivePage() {
         className="text-center py-8"
       >
         <h1 className="text-white mb-4 text-4xl">Archive</h1>
-        <p className="text-white/60">Browse your fashion analysis history</p>
+        <p className="text-white/60 mb-2">Browse your fashion analysis history</p>
+        {/* [수정 4] 보안 관련 안내 문구 추가 */}
+        <p className="text-white/30 text-sm max-w-2xl mx-auto">
+          For security and privacy reasons, this archive is currently simulated and not connected to the live database.
+        </p>
       </motion.div>
 
       {/* Calendar */}

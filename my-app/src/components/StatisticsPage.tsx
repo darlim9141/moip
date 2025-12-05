@@ -47,9 +47,9 @@ export function StatisticsPage() {
 
   // 하드코딩된 데이터셋 정보
   const datasetStats = [
-    { category: 'Training Images', value: '400,000', description: 'Curated fashion images for model training' },
-    { category: 'Validation Set', value: '50,000', description: 'Images used for model validation' },
-    { category: 'Test Set', value: '50,000', description: 'Final evaluation dataset' },
+    { category: 'Training Images', value: '1000', description: 'Curated fashion images for model training' },
+    { category: 'Validation Set', value: '125', description: 'Images used for model validation' },
+    { category: 'Test Set', value: '125', description: 'Final evaluation dataset' },
     { category: 'Style Categories', value: '4', description: 'Minimal, Casual, Classic, Street' },
   ];
 

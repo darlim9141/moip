@@ -4,13 +4,46 @@ import { BookOpen, Calendar, FileCode, ExternalLink } from 'lucide-react';
 
 export function DocumentationPage() {
   const projectTimeline = [
-    { date: '2024-09-15', milestone: 'Project Initialization', description: 'Repository setup and initial project structure' },
-    { date: '2024-10-01', milestone: 'Dataset Collection', description: 'Gathered and curated 500K fashion images' },
-    { date: '2024-10-15', milestone: 'Model Architecture', description: 'Implemented ResNet-50 based classification model' },
-    { date: '2024-11-01', milestone: 'Training Phase', description: 'Completed model training with 94.2% accuracy' },
-    { date: '2024-11-10', milestone: 'Frontend Development', description: 'Built glassmorphism UI with React and Tailwind' },
-    { date: '2024-11-20', milestone: '3D Visualization', description: 'Added interactive style-space embedding visualization' },
-    { date: '2024-11-25', milestone: 'Beta Launch', description: 'Deployed Moip platform for testing' },
+    { 
+      date: '2025-09-05', 
+      milestone: 'Project Kickoff', 
+      description: 'Initial repository setup, folder structure organization (Front/Back separation), and Git flow establishment.' 
+    },
+    { 
+      date: '2025-09-20', 
+      milestone: 'Data Acquisition', 
+      description: 'Executed web crawling strategies to gather fashion datasets (Minimal, Amekaji, Street) and performed initial cleaning.' 
+    },
+    { 
+      date: '2025-10-10', 
+      milestone: 'ML Model Prototyping', 
+      description: 'Implemented K-Means clustering algorithms and set up the ResNet-50 architecture for supervised style classification.' 
+    },
+    { 
+      date: '2025-10-25', 
+      milestone: 'Backend & API Integration', 
+      description: 'Built FastAPI server, integrated Google Gemini API for personalized recommendations, and established DB connections.' 
+    },
+    { 
+      date: '2025-11-10', 
+      milestone: 'Frontend Core Development', 
+      description: 'Developed React-based UI with Gallery, Upload features, and implemented state management for seamless user interaction.' 
+    },
+    { 
+      date: '2025-11-20', 
+      milestone: 'Visualization & Features', 
+      description: 'Added interactive 3D Style Space visualization, statistics dashboard, and detailed analysis modal windows.' 
+    },
+    { 
+      date: '2025-12-01', 
+      milestone: 'Deployment & Optimization', 
+      description: 'Dockerized the backend application, configured Git LFS for model weights, and deployed to Hugging Face Spaces & Vercel.' 
+    },
+    { 
+      date: '2025-12-03', 
+      milestone: 'Final Polish', 
+      description: 'Refined UX/UI design (Pretendard font, Glassmorphism), fixed layout bugs, and finalized documentation.' 
+    },
   ];
 
   const notebooks = [
@@ -68,10 +101,13 @@ export function DocumentationPage() {
             <div className="pl-4 border-l-2 border-white/10">
               <h3 className="text-white mb-3">About Moip (모입)</h3>
               <p className="text-white/70 leading-relaxed mb-4">
-                Moip is an AI-powered fashion style recognition platform that analyzes clothing and outfits to classify them across four distinct style categories: Minimal, Casual, Classic, and Street. Built with cutting-edge deep learning technology, Moip provides users with instant style insights and personalized fashion recommendations.
+                [cite_start]Moip is a collaborative project developed by a diverse team of Computer Science students at the University of Wisconsin-Madison[cite: 7]. The team consists of members with varying levels of experience, ranging from those currently enrolled in introductory OOP courses to advanced developers.
+              </p>
+              <p className="text-white/70 leading-relaxed mb-4">
+                [cite_start]This project was driven by a focus on experiential learning and technical exploration[cite: 7]. We aimed to bridge the gap between theoretical knowledge and practical application by implementing a full-cycle software development process. [cite_start]The journey involved mastering various technologies including Supervised & Unsupervised Learning, Web Crawling for dataset creation, RESTful API development, and modern full-stack architecture using React and Python[cite: 7].
               </p>
               <p className="text-white/70 leading-relaxed">
-                The platform features a clean, modern glassmorphism interface that emphasizes clarity and user experience. Users can upload fashion images, receive detailed style breakdowns with confidence percentages, explore their upload history through an interactive calendar archive, and visualize their style preferences in a 3D embedding space.
+                [cite_start]Functionally, Moip is an intelligent platform that leverages Machine Learning to analyze fashion images, classify them into distinct styles, provide statistical insights via dashboards, and render interactive 3D visualizations of style embeddings[cite: 7]. [cite_start]It also incorporates Docker for containerization and Git for rigorous version control, ensuring a robust and scalable deployment workflow[cite: 7].
               </p>
             </div>
 
@@ -80,34 +116,43 @@ export function DocumentationPage() {
               <ul className="space-y-2 text-white/70">
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  <span><strong className="text-white">Real-time Analysis:</strong> Instant fashion style classification with multi-category confidence scores</span>
+                  [cite_start]<span><strong className="text-white">Real-time Analysis:</strong> Instant fashion style classification with multi-category confidence scores [cite: 7]</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  <span><strong className="text-white">3D Visualization:</strong> Interactive embedding space showing style relationships and patterns</span>
+                  [cite_start]<span><strong className="text-white">3D Visualization:</strong> Interactive embedding space showing style relationships and patterns [cite: 7]</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  <span><strong className="text-white">Archive System:</strong> Calendar-based history tracking with detailed analysis records</span>
+                  [cite_start]<span><strong className="text-white">Archive System:</strong> Calendar-based history tracking with detailed analysis records [cite: 7]</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  <span><strong className="text-white">Smart Recommendations:</strong> Personalized accessory and brand suggestions based on style profile</span>
+                  [cite_start]<span><strong className="text-white">Smart Recommendations:</strong> Personalized accessory and brand suggestions based on style profile [cite: 7]</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  <span><strong className="text-white">Analytics Dashboard:</strong> Comprehensive statistics and insights from global dataset</span>
+                  [cite_start]<span><strong className="text-white">Analytics Dashboard:</strong> Comprehensive statistics and insights from global dataset [cite: 7]</span>
                 </li>
               </ul>
             </div>
 
             <div className="pl-4 border-l-2 border-white/10">
               <h3 className="text-white mb-3">Technology Stack</h3>
-              <p className="text-white/70 leading-relaxed">
-                Backend: PyTorch-based ResNet-50 architecture with custom attention mechanisms. 
-                Frontend: React with TypeScript, Tailwind CSS v4.0, Motion animations, and Recharts for data visualization. 
-                The model achieves 79.2% accuracy on our validation set and processes images through a 3-dimensional latent space optimized for style classification.
-              </p>
+              <div className="text-white/70 leading-relaxed space-y-2">
+                <p>
+                  <strong className="text-white block mb-1">Frontend:</strong>
+                  [cite_start]React (Vite), TypeScript, Tailwind CSS v4.0, Framer Motion, Recharts [cite: 7]
+                </p>
+                <p>
+                  <strong className="text-white block mb-1">Backend & AI:</strong>
+                  [cite_start]Python, FastAPI, PyTorch, TensorFlow (ResNet-50), Google Gemini API, Scikit-learn (K-Means) [cite: 7]
+                </p>
+                <p>
+                  <strong className="text-white block mb-1">Infrastructure & Tools:</strong>
+                  [cite_start]Docker, Hugging Face Spaces (GPU/CPU), Vercel, Git LFS [cite: 7]
+                </p>
+              </div>
             </div>
           </div>
         </GlassCard>
@@ -156,7 +201,7 @@ export function DocumentationPage() {
           <div className="mt-8 pt-6 border-t border-white/10 text-center">
             <p className="text-white/50 text-sm">
               View complete commit history on{' '}
-              <a href="https://github.com/darlim9141/kcu5/commits/main/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <a href="https://github.com/darlim9141/moip" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 GitHub
               </a>
             </p>
