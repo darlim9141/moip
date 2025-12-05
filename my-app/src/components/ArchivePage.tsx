@@ -28,56 +28,56 @@ export function ArchivePage() {
       id: '1',
       date: '2025-11-25',
       image: 'https://images.unsplash.com/photo-1653875842174-429c1b467548?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcG9ydHJhaXQlMjBtaW5pbWFsfGVufDF8fHx8MTc2NDEyOTg5N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-      styles: { minimal: 80, casual: 30, classic: 24, street: 10 },
+      styles: { minimal: 82.2, casual: 6.8, classic: 10.4, street: 0.6 },
     },
     {
       id: '2',
       date: '2025-11-22',
       image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 25, casual: 75, classic: 30, street: 40 },
+      styles: { minimal: 30.9, casual: 29.3, classic: 28.8, street: 10.9 },
     },
     {
       id: '3',
       date: '2025-11-20',
       image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 30, casual: 20, classic: 85, street: 15 },
+      styles: { minimal: 36.8, casual: 49.8, classic: 8.8, street: 4.6 },
     },
     {
       id: '4',
       date: '2025-11-18',
       image: 'https://images.unsplash.com/photo-1603233842167-ff91cab9e6ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmYXNoaW9uJTIwdXJiYW58ZW58MXx8fHwxNzY0MTIwMTc4fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      styles: { minimal: 15, casual: 45, classic: 20, street: 90 },
+      styles: { minimal: 73.7, casual: 12.1, classic: 13.6, street: 0.6 },
     },
     {
       id: '5',
       date: '2025-11-15',
       image: 'https://images.unsplash.com/photo-1608748010899-18f300247112?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 70, casual: 35, classic: 28, street: 12 },
+      styles: { minimal: 85.2, casual: 1.9, classic: 12.3, street: 0.5 },
     },
     {
       id: '6',
       date: '2025-11-12',
       image: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 35, casual: 80, classic: 25, street: 50 },
+      styles: { minimal: 90.7, casual: 0.3, classic: 3, street: 6 },
     },
     // --- December 2025 Data (새로 추가됨) ---
     {
       id: '7',
       date: '2025-12-02',
       image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 20, casual: 40, classic: 10, street: 80 },
+      styles: { minimal: 73.7, casual: 18.1, classic: 5.8, street: 2.4 },
     },
     {
       id: '8',
       date: '2025-12-05',
       image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 60, casual: 20, classic: 50, street: 10 },
+      styles: { minimal: 68.9, casual: 11, classic: 18, street: 2.2 },
     },
     {
       id: '9',
       date: '2025-12-10',
       image: 'https://images.unsplash.com/photo-1559697242-a465f2578a95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      styles: { minimal: 10, casual: 90, classic: 10, street: 20 },
+      styles: { minimal: 16.2, casual: 0.9, classic: 2.2, street: 80.6 },
     }
   ];
 
