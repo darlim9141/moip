@@ -75,7 +75,7 @@ export function ArchivePage() {
     },
     {
       id: '9',
-      date: '2025-12-10',
+      date: '2025-11-29',
       image: 'https://images.unsplash.com/photo-1559697242-a465f2578a95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 16.2, casual: 0.9, classic: 2.2, street: 80.6 },
     }
