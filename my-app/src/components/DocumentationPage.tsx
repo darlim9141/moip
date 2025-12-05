@@ -48,25 +48,25 @@ export function DocumentationPage() {
 
   const notebooks = [
     {
-      title: 'Data Preprocessing & Augmentation',
-      author: 'Team Member A',
-      description: 'Comprehensive notebook covering image preprocessing, data augmentation techniques, and dataset preparation for model training.',
-      link: 'https://colab.research.google.com/notebook-1',
-      tags: ['Data', 'Preprocessing', 'CV'],
+      title: 'Unsupervised Learning & Style Analysis',
+      author: 'Dongjoon Lee',
+      description: 'Exploratory data analysis using VGG16 feature extraction, PCA dimensionality reduction, and K-Means clustering to visualize the latent fashion space.',
+      link: 'https://github.com/darlim9141/kcu5/blob/main/kmeans_notebook.ipynb', 
+      tags: ['Unsupervised', 'PCA', 'K-Means', 't-SNE'],
     },
     {
-      title: 'Model Training & Evaluation',
-      author: 'Team Member B',
-      description: 'Deep dive into model architecture, training process, hyperparameter tuning, and evaluation metrics with visual analysis.',
-      link: 'https://colab.research.google.com/notebook-2',
-      tags: ['Training', 'Deep Learning', 'ResNet'],
+      title: 'Supervised Learning: Style Classification',
+      author: 'Jiho Han, Wonjun Jung',
+      description: 'Implementation of a robust CNN classifier using Transfer Learning with ResNet-50. Covers data augmentation strategies and model performance evaluation.',
+      link: 'https://github.com/darlim9141/kcu5/blob/main/cnn-notebook.ipynb', 
+      tags: ['ResNet-50', 'Transfer Learning', 'CNN', 'Augmentation'],
     },
     {
-      title: 'Style Embedding Analysis',
-      author: 'Team Member C',
-      description: 'Exploration of learned embeddings, dimensionality reduction techniques, and visualization of fashion style space.',
-      link: 'https://colab.research.google.com/notebook-3',
-      tags: ['Embedding', 'Visualization', 'Analysis'],
+      title: 'Backend Architecture & MLOps',
+      author: 'Harim Jin', 
+      description: 'A comprehensive guide to model serving. Details the architecture using FastAPI, Docker containerization, Git LFS management, and cloud deployment pipelines.',
+      link: 'https://github.com/darlim9141/kcu5/blob/main/backend_notebook.ipynb', 
+      tags: ['FastAPI', 'Docker', 'MLOps', 'Hugging Face'],
     },
   ];
 
