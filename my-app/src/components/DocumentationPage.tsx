@@ -101,13 +101,13 @@ export function DocumentationPage() {
             <div className="pl-4 border-l-2 border-white/10">
               <h3 className="text-white mb-3">About Moip (모입)</h3>
               <p className="text-white/70 leading-relaxed mb-4">
-                [cite_start]Moip is a collaborative project developed by a diverse team of Computer Science students at the University of Wisconsin-Madison[cite: 7]. The team consists of members with varying levels of experience, ranging from those currently enrolled in introductory OOP courses to advanced developers.
+                Moip is a collaborative project developed by a diverse team of Computer Science students at the University of Wisconsin-Madison. The team consists of members with varying levels of experience, ranging from those currently enrolled in introductory OOP courses to advanced developers.
               </p>
               <p className="text-white/70 leading-relaxed mb-4">
-                [cite_start]This project was driven by a focus on experiential learning and technical exploration[cite: 7]. We aimed to bridge the gap between theoretical knowledge and practical application by implementing a full-cycle software development process. [cite_start]The journey involved mastering various technologies including Supervised & Unsupervised Learning, Web Crawling for dataset creation, RESTful API development, and modern full-stack architecture using React and Python[cite: 7].
+                This project was driven by a focus on experiential learning and technical exploration. We aimed to bridge the gap between theoretical knowledge and practical application by implementing a full-cycle software development process. The journey involved mastering various technologies including Supervised & Unsupervised Learning, Web Crawling for dataset creation, RESTful API development, and modern full-stack architecture using React and Python.
               </p>
               <p className="text-white/70 leading-relaxed">
-                [cite_start]Functionally, Moip is an intelligent platform that leverages Machine Learning to analyze fashion images, classify them into distinct styles, provide statistical insights via dashboards, and render interactive 3D visualizations of style embeddings[cite: 7]. [cite_start]It also incorporates Docker for containerization and Git for rigorous version control, ensuring a robust and scalable deployment workflow[cite: 7].
+                Functionally, Moip is an intelligent platform that leverages Machine Learning to analyze fashion images, classify them into distinct styles, provide statistical insights via dashboards, and render interactive 3D visualizations of style embeddings. It also incorporates Docker for containerization and Git for rigorous version control, ensuring a robust and scalable deployment workflow.
               </p>
             </div>
 
@@ -116,23 +116,23 @@ export function DocumentationPage() {
               <ul className="space-y-2 text-white/70">
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  [cite_start]<span><strong className="text-white">Real-time Analysis:</strong> Instant fashion style classification with multi-category confidence scores [cite: 7]</span>
+                  <span><strong className="text-white">Real-time Analysis:</strong> Instant fashion style classification with multi-category confidence scores</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  [cite_start]<span><strong className="text-white">3D Visualization:</strong> Interactive embedding space showing style relationships and patterns [cite: 7]</span>
+                  <span><strong className="text-white">3D Visualization:</strong> Interactive embedding space showing style relationships and patterns</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  [cite_start]<span><strong className="text-white">Archive System:</strong> Calendar-based history tracking with detailed analysis records [cite: 7]</span>
+                  <span><strong className="text-white">Archive System:</strong> Calendar-based history tracking with detailed analysis records</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  [cite_start]<span><strong className="text-white">Smart Recommendations:</strong> Personalized accessory and brand suggestions based on style profile [cite: 7]</span>
+                  <span><strong className="text-white">Smart Recommendations:</strong> Personalized accessory and brand suggestions based on style profile</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-cyan-400 mt-1">•</span>
-                  [cite_start]<span><strong className="text-white">Analytics Dashboard:</strong> Comprehensive statistics and insights from global dataset [cite: 7]</span>
+                  <span><strong className="text-white">Analytics Dashboard:</strong> Comprehensive statistics and insights from global dataset</span>
                 </li>
               </ul>
             </div>
@@ -142,15 +142,15 @@ export function DocumentationPage() {
               <div className="text-white/70 leading-relaxed space-y-2">
                 <p>
                   <strong className="text-white block mb-1">Frontend:</strong>
-                  [cite_start]React (Vite), TypeScript, Tailwind CSS v4.0, Framer Motion, Recharts [cite: 7]
+                  React (Vite), TypeScript, Tailwind CSS v4.0, Framer Motion, Recharts
                 </p>
                 <p>
                   <strong className="text-white block mb-1">Backend & AI:</strong>
-                  [cite_start]Python, FastAPI, PyTorch, TensorFlow (ResNet-50), Google Gemini API, Scikit-learn (K-Means) [cite: 7]
+                  Python, FastAPI, PyTorch, TensorFlow (ResNet-50), Google Gemini API, Scikit-learn (K-Means)
                 </p>
                 <p>
                   <strong className="text-white block mb-1">Infrastructure & Tools:</strong>
-                  [cite_start]Docker, Hugging Face Spaces (GPU/CPU), Vercel, Git LFS [cite: 7]
+                  Docker, Hugging Face Spaces (GPU/CPU), Vercel, Git LFS
                 </p>
               </div>
             </div>
