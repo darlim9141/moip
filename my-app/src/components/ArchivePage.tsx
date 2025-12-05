@@ -51,7 +51,7 @@ export function ArchivePage() {
     {
       id: '5',
       date: '2025-11-15',
-      image: 'https://images.unsplash.com/photo-1529139574466-a302c27e3844?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1608748010899-18f300247112?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 70, casual: 35, classic: 28, street: 12 },
     },
     {
@@ -76,7 +76,7 @@ export function ArchivePage() {
     {
       id: '9',
       date: '2025-12-10',
-      image: 'https://images.unsplash.com/photo-1550614000-4b9519e02d48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1559697242-a465f2578a95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       styles: { minimal: 10, casual: 90, classic: 10, street: 20 },
     }
   ];
