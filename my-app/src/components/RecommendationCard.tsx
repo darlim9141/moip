@@ -60,7 +60,7 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
             {recommendation.brands.map(brand => (
               <span
                 key={brand}
-                className="px-2.5 py-1 rounded-md text-xs font-medium text-white/70 border border-white/10 bg-white/5 backdrop-blur-sm"
+                className="px-2.5 py-1 rounded-xl text-xs font-medium text-white/70 border border-white/10 bg-white/5 backdrop-blur-sm"
               >
                 {brand}
               </span>
