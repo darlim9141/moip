@@ -201,7 +201,7 @@ export function DocumentationPage() {
           <div className="mt-8 pt-6 border-t border-white/10 text-center">
             <p className="text-white/50 text-sm">
               View complete commit history on{' '}
-              <a href="https://github.com/darlim9141/moip" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <a href="https://github.com/darlim9141/kcu5/commits/main" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 GitHub
               </a>
             </p>
