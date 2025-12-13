@@ -49,7 +49,7 @@ export function DocumentationPage() {
   const notebooks = [
     {
       title: 'Unsupervised Learning & Style Analysis',
-      author: 'Dongjoon Lee',
+      author: 'Dongjoon Kim',
       description: 'Exploratory data analysis using VGG16 feature extraction, PCA dimensionality reduction, and K-Means clustering to visualize the latent fashion space.',
       link: 'https://github.com/darlim9141/kcu5/blob/main/kmeans_notebook.ipynb', 
       tags: ['Unsupervised', 'PCA', 'K-Means', 't-SNE'],
